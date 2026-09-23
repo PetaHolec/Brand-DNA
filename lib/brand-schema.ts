@@ -1,0 +1,67 @@
+export const brandDnaJsonSchema = {
+  type: "object",
+  additionalProperties: false,
+  properties: {
+    essence: { type: "string" },
+    positioning: { type: "string" },
+    primaryAudiences: { type: "array", items: { type: "string" } },
+    secondaryAudiences: { type: "array", items: { type: "string" } },
+    customerNeeds: { type: "array", items: { type: "string" } },
+    valueProposition: { type: "string" },
+    values: {
+      type: "array",
+      items: {
+        type: "object",
+        additionalProperties: false,
+        properties: { name: { type: "string" }, explanation: { type: "string" } },
+        required: ["name", "explanation"],
+      },
+    },
+    personality: { type: "array", items: { type: "string" } },
+    brandIs: { type: "array", items: { type: "string" } },
+    brandIsNot: { type: "array", items: { type: "string" } },
+    archetype: {
+      type: "object",
+      additionalProperties: false,
+      properties: { primary: { type: "string" }, secondary: { type: "string" }, rationale: { type: "string" } },
+      required: ["primary", "secondary", "rationale"],
+    },
+    toneOfVoice: {
+      type: "object",
+      additionalProperties: false,
+      properties: {
+        principles: { type: "array", items: { type: "string" } },
+        avoid: { type: "array", items: { type: "string" } },
+        examples: { type: "array", items: { type: "string" } },
+      },
+      required: ["principles", "avoid", "examples"],
+    },
+    elevatorPitch: { type: "string" },
+    headlines: { type: "array", items: { type: "string" } },
+    visualDirection: { type: "array", items: { type: "string" } },
+    differentiation: { type: "array", items: { type: "string" } },
+    proofPoints: { type: "array", items: { type: "string" } },
+    websiteStructure: {
+      type: "array",
+      items: {
+        type: "object",
+        additionalProperties: false,
+        properties: { title: { type: "string" }, purpose: { type: "string" } },
+        required: ["title", "purpose"],
+      },
+    },
+    primaryCTA: { type: "string" },
+    secondaryCTA: { type: "string" },
+    contentPriorities: { type: "array", items: { type: "string" } },
+    seoThemes: { type: "array", items: { type: "string" } },
+    marketingOpportunities: { type: "array", items: { type: "string" } },
+    gapsAndRisks: { type: "array", items: { type: "string" } },
+    longTermCare: { type: "array", items: { type: "string" } },
+  },
+  required: [
+    "essence", "positioning", "primaryAudiences", "secondaryAudiences", "customerNeeds", "valueProposition",
+    "values", "personality", "brandIs", "brandIsNot", "archetype", "toneOfVoice", "elevatorPitch", "headlines",
+    "visualDirection", "differentiation", "proofPoints", "websiteStructure", "primaryCTA", "secondaryCTA",
+    "contentPriorities", "seoThemes", "marketingOpportunities", "gapsAndRisks", "longTermCare"
+  ],
+} as const;
